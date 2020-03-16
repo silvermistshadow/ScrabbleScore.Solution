@@ -16,5 +16,16 @@ namespace ScoreTests
             //Assert
             Assert.AreEqual(result, 1);
         }
+
+        [TestMethod]
+        public void Score_GetScoreOfWord_ScoreOfWord()
+        {
+            //Arrange
+            Score newScore = new Score("test");
+            //Act
+            int result = newScore.getScore(newScore.word);
+            //Assert
+            Assert.AreEqual(result, 4);
+        }
     }
 }

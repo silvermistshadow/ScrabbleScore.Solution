@@ -12,11 +12,11 @@ namespace Scrabble.Score
 
         public string word { get; set; } = "";
 
-        public char letter { get; set; }
+        public char letter { get; set; } = ' ';
 
         public Score(string input)
         {
-             word = input;
+            word = input;
         }
         public Score(char input)
         {   
