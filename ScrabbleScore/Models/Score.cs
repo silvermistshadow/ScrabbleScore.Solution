@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using custExtensions.StringExtend;
 
 namespace Scrabble.Score
 {
@@ -16,11 +18,14 @@ namespace Scrabble.Score
 
         public Score(string input)
         {
-            word = input;
+            word = input.ToLower();
+            word = word.RemoveWhitespace();
+            int Score = score;
         }
         public Score(char input)
         {   
-            letter = input;
+            letter = Char.ToLower(input);
+            int Score = score;
         }
 
         public int getScore(string input)
