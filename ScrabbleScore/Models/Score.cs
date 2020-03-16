@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using custExtensions.StringExtend;
-
+using System.Linq;
 namespace Scrabble.Score
 {
     public class Score
@@ -19,7 +18,7 @@ namespace Scrabble.Score
         public Score(string input)
         {
             word = input.ToLower();
-            word = word.RemoveWhitespace();
+            word = RemoveWhitespace(word);
             int Score = score;
         }
         public Score(char input)
@@ -40,6 +39,13 @@ namespace Scrabble.Score
         public int getScore(char input)
         {
             return scoreDict[input];
+        }
+
+        public string RemoveWhitespace(string input)
+        {
+            return new string(input.ToCharArray()
+            .Where(c => char.IsLetter(c))
+            .ToArray());
         }
     }
 }
