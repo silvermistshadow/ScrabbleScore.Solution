@@ -18,7 +18,7 @@ namespace Scrabble.Score
         public Score(string input)
         {
             word = input.ToLower();
-            word = RemoveWhitespace(word);
+            word = RemoveNonLetter(word);
             int Score = score;
         }
         public Score(char input)
@@ -28,7 +28,7 @@ namespace Scrabble.Score
         }
 
         public int getScore(string input)
-        { int total = 0;
+        {   int total = 0;
             foreach(char letter in input)
             {
                 total += scoreDict[letter];
@@ -41,7 +41,7 @@ namespace Scrabble.Score
             return scoreDict[input];
         }
 
-        public string RemoveWhitespace(string input)
+        public string RemoveNonLetter(string input)
         {
             return new string(input.ToCharArray()
             .Where(c => char.IsLetter(c))

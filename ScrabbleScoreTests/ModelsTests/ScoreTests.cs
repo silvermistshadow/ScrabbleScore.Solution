@@ -27,5 +27,15 @@ namespace ScoreTests
             //Assert
             Assert.AreEqual(result, 4);
         }
+
+        [TestMethod]
+        public void Score_GetScoreWithNonletters_ScoreOfWord()
+        {   //Arrange
+            Score newScore = new Score("T3 est");
+            //Act
+            int result = newScore.getScore(newScore.word);
+            //Assert
+            Assert.AreEqual(result, 4);
+        }
     }
 }
